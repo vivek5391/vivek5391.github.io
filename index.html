@@ -36,6 +36,11 @@
   <!-- Font Awesome 6 Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
+  <!-- Three.js CDN and Loaders -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/STLLoader.js"></script>
+
   <!-- Custom Master Styles -->
   <link rel="stylesheet" href="css/style.css">
 </head>
@@ -66,22 +71,29 @@
         <a href="#home" class="nav-link hover:text-sky-400">Home</a>
         <a href="#projects" class="nav-link hover:text-sky-400">Projects</a>
         <a href="#simulator" class="nav-link hover:text-sky-400 flex items-center gap-1.5">
-          <i class="fa-solid fa-robot text-sky-400 text-xs"></i> 3D Kinematics Sim
+          <i class="fa-solid fa-cube text-sky-400 text-xs"></i> 3D Robot Twin
         </a>
         <a href="#skills" class="nav-link hover:text-sky-400">Skills</a>
         <a href="#workflow" class="nav-link hover:text-sky-400">Workflow</a>
+        <a href="resume.html" class="nav-link text-amber-400 hover:text-amber-300 flex items-center gap-1 font-semibold">
+          <i class="fa-solid fa-file-pdf text-xs"></i> Resume
+        </a>
         <a href="#contact" class="nav-link hover:text-sky-400">Contact</a>
       </nav>
 
       <!-- Action Buttons -->
       <div class="hidden sm:flex items-center gap-3">
+        <a href="resume.html" 
+           class="inline-flex items-center gap-2 px-3.5 py-2 rounded-lg bg-amber-500/10 border border-amber-500/30 text-amber-300 text-xs font-semibold hover:bg-amber-500 hover:text-slate-950 transition">
+          <i class="fa-solid fa-file-lines text-xs"></i> View Resume
+        </a>
         <a href="https://github.com/vivek5391" target="_blank" rel="noopener noreferrer" 
-           class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-slate-900 border border-white/10 text-slate-200 text-sm font-medium hover:bg-slate-800 hover:border-sky-500/50 hover:text-white transition">
-          <i class="fa-brands fa-github text-base"></i> GitHub
+           class="inline-flex items-center gap-2 px-3.5 py-2 rounded-lg bg-slate-900 border border-white/10 text-slate-200 text-xs font-medium hover:bg-slate-800 hover:border-sky-500/50 hover:text-white transition">
+          <i class="fa-brands fa-github text-sm"></i> GitHub
         </a>
         <a href="#contact" 
-           class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-sky-500 text-white text-sm font-medium hover:bg-sky-600 shadow-md shadow-sky-500/20 hover:shadow-sky-500/40 transition">
-          <i class="fa-solid fa-paper-plane text-xs"></i> Hire Me
+           class="inline-flex items-center gap-2 px-3.5 py-2 rounded-lg bg-sky-500 text-white text-xs font-semibold hover:bg-sky-600 shadow-md shadow-sky-500/20 transition">
+          <i class="fa-solid fa-paper-plane text-[10px]"></i> Hire Me
         </a>
       </div>
 
@@ -95,9 +107,10 @@
     <div id="mobileMenu" class="hidden md:hidden bg-slate-900/95 border-b border-white/10 px-4 pt-3 pb-6 space-y-3 text-sm font-medium text-slate-300">
       <a href="#home" class="block py-2 hover:text-sky-400">Home</a>
       <a href="#projects" class="block py-2 hover:text-sky-400">Projects</a>
-      <a href="#simulator" class="block py-2 hover:text-sky-400">3D Kinematics Sim</a>
+      <a href="#simulator" class="block py-2 hover:text-sky-400">3D Robot Twin</a>
       <a href="#skills" class="block py-2 hover:text-sky-400">Skills</a>
       <a href="#workflow" class="block py-2 hover:text-sky-400">Workflow</a>
+      <a href="resume.html" class="block py-2 text-amber-400 hover:text-amber-300 font-semibold">Resume (PDF)</a>
       <a href="#contact" class="block py-2 hover:text-sky-400">Contact</a>
       <div class="pt-3 border-t border-white/10 flex gap-2">
         <a href="https://github.com/vivek5391" target="_blank" class="w-1/2 text-center py-2 rounded bg-slate-800 text-white text-xs">GitHub</a>
@@ -131,10 +144,10 @@
             <i class="fa-solid fa-cubes-stacked"></i> Explore Projects
           </a>
           <a href="#simulator" class="px-6 py-3.5 rounded-xl bg-slate-900/80 hover:bg-slate-800 border border-white/10 hover:border-sky-500/40 text-slate-200 font-semibold text-sm hover:-translate-y-0.5 transition flex items-center gap-2">
-            <i class="fa-solid fa-gamepad text-sky-400"></i> Try Kinematics Simulator
+            <i class="fa-solid fa-cube text-sky-400"></i> Interactive 3D Robot Twin
           </a>
-          <a href="#contact" class="px-6 py-3.5 rounded-xl bg-slate-900/80 hover:bg-slate-800 border border-white/10 text-slate-200 font-semibold text-sm hover:-translate-y-0.5 transition flex items-center gap-2">
-            <i class="fa-solid fa-envelope text-amber-400"></i> Get In Touch
+          <a href="resume.html" class="px-6 py-3.5 rounded-xl bg-amber-500/15 hover:bg-amber-500/25 border border-amber-500/40 text-amber-300 font-semibold text-sm hover:-translate-y-0.5 transition flex items-center gap-2">
+            <i class="fa-solid fa-file-pdf text-amber-400"></i> View Resume
           </a>
         </div>
 
@@ -161,25 +174,56 @@
     </div>
   </section>
 
-  <!-- Interactive 3-Link Robot Arm Kinematics Simulator -->
+  <!-- Interactive Robot Arm Kinematics & 3D Twin Section -->
   <section id="simulator" class="py-20 bg-slate-900/40 border-y border-white/5 relative">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center max-w-3xl mx-auto mb-12">
+      <div class="text-center max-w-3xl mx-auto mb-10">
         <span class="text-xs font-semibold px-3 py-1 rounded-full bg-sky-500/10 text-sky-400 border border-sky-500/20 uppercase tracking-widest">
-          Interactive Robotics Demonstration
+          Robotics Interactive Lab
         </span>
         <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-3 mb-4">
-          Planar Forward Kinematics Simulator
+          Robotic Arm Digital Twin & Kinematics Studio
         </h2>
         <p class="text-slate-400 text-sm sm:text-base leading-relaxed">
-          Test the real-time trigonometric kinematics engine below. Adjust the servo joint angles $(\theta_1, \theta_2, \theta_3)$ or click <strong>Wave Motion</strong> to watch the end-effector calculate Cartesian position $(X, Y)$ in real time.
+          Switch between the <strong>3D WebGL CAD Digital Twin</strong> (orbit, pan, and zoom around the real Fusion 360 meshes) and the <strong>Trigonometric Forward Kinematics Model</strong> below.
         </p>
+
+        <!-- View Mode Switcher Tabs -->
+        <div class="inline-flex p-1 rounded-xl bg-slate-900 border border-white/10 mt-6">
+          <button id="tabBtn3D" onclick="switchSimView('3d')" class="px-5 py-2 rounded-lg text-xs font-semibold bg-sky-500 text-white transition flex items-center gap-2">
+            <i class="fa-solid fa-cube text-xs"></i> 3D WebGL Twin (CAD Meshes)
+          </button>
+          <button id="tabBtn2D" onclick="switchSimView('2d')" class="px-5 py-2 rounded-lg text-xs font-semibold text-slate-400 hover:text-white transition flex items-center gap-2">
+            <i class="fa-solid fa-draw-polygon text-xs"></i> 2D Kinematics Planar Model
+          </button>
+        </div>
       </div>
 
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-        <!-- Canvas Viewer (Col 7) -->
+        <!-- Visualizer Area (Col 7) -->
         <div class="lg:col-span-7 flex flex-col items-center">
-          <div class="relative w-full aspect-[4/3] max-w-xl mx-auto">
+          
+          <!-- 3D WebGL Container -->
+          <div id="threeView" class="relative w-full aspect-[4/3] max-w-xl mx-auto rounded-2xl overflow-hidden border border-sky-500/30 shadow-2xl bg-slate-950">
+            <div id="threeContainer" class="w-full h-full"></div>
+            
+            <!-- Loading Indicator -->
+            <div id="threeLoading" class="absolute inset-0 bg-slate-950/90 flex flex-col items-center justify-center gap-2 z-10 pointer-events-none">
+              <i class="fa-solid fa-circle-notch fa-spin text-sky-400 text-2xl"></i>
+              <span class="text-xs text-slate-400">Loading CAD Meshes (Base, Shoulder, Arm, Gripper)...</span>
+            </div>
+
+            <!-- Orbit Hints -->
+            <div class="absolute bottom-3 left-3 bg-slate-950/80 backdrop-blur border border-white/10 px-3 py-1.5 rounded-lg text-[10px] text-slate-300 font-mono">
+              <i class="fa-solid fa-hand-pointer text-sky-400 mr-1"></i> Orbit: Drag | Zoom: Scroll
+            </div>
+            <button onclick="window.resetThreeCamera && window.resetThreeCamera()" class="absolute bottom-3 right-3 bg-slate-950/80 hover:bg-slate-800 border border-white/10 px-3 py-1.5 rounded-lg text-[10px] text-slate-300 font-mono flex items-center gap-1.5 transition">
+              <i class="fa-solid fa-arrows-rotate text-xs"></i> Reset View
+            </button>
+          </div>
+
+          <!-- 2D Canvas Container (Hidden by default) -->
+          <div id="canvasView" class="hidden relative w-full aspect-[4/3] max-w-xl mx-auto">
             <canvas id="robotCanvas" class="w-full h-full block"></canvas>
             <div class="absolute bottom-3 left-3 bg-slate-950/80 backdrop-blur border border-white/10 px-3 py-1.5 rounded-lg text-[11px] text-slate-300 font-mono">
               Work Envelope: R = 280 mm
@@ -633,11 +677,17 @@
         </div>
       </div>
 
-      <!-- Quick Email Button -->
-      <a href="mailto:vivektoradamal@gmail.com?subject=Engineering%20Inquiry%20via%20Portfolio" 
-         class="inline-flex items-center gap-2.5 px-8 py-4 rounded-xl bg-sky-500 hover:bg-sky-600 text-white font-semibold text-sm shadow-xl shadow-sky-500/25 hover:shadow-sky-500/40 transition">
-        <i class="fa-solid fa-paper-plane text-xs"></i> Send Direct Email to Vivek
-      </a>
+      <!-- Action Buttons in Contact -->
+      <div class="flex flex-wrap items-center justify-center gap-4">
+        <a href="mailto:vivektoradamal@gmail.com?subject=Engineering%20Inquiry%20via%20Portfolio" 
+           class="inline-flex items-center gap-2.5 px-8 py-4 rounded-xl bg-sky-500 hover:bg-sky-600 text-white font-semibold text-sm shadow-xl shadow-sky-500/25 hover:shadow-sky-500/40 transition">
+          <i class="fa-solid fa-paper-plane text-xs"></i> Send Direct Email
+        </a>
+        <a href="resume.html" 
+           class="inline-flex items-center gap-2.5 px-8 py-4 rounded-xl bg-amber-500 hover:bg-amber-600 text-slate-950 font-bold text-sm shadow-xl shadow-amber-500/20 hover:shadow-amber-500/40 transition">
+          <i class="fa-solid fa-file-pdf text-xs"></i> Download Printable Resume (PDF)
+        </a>
+      </div>
     </div>
   </section>
 
@@ -651,6 +701,7 @@
         <a href="https://github.com/vivek5391/6dof-robotic-arm-ros2" target="_blank" class="hover:text-sky-400 transition">ROS 2 Arm</a>
         <a href="https://github.com/vivek5391/esp32-industrial-iot-controller" target="_blank" class="hover:text-sky-400 transition">ESP32 IoT</a>
         <a href="https://github.com/vivek5391/project-portfolio" target="_blank" class="hover:text-sky-400 transition">3D Printer</a>
+        <a href="resume.html" class="text-amber-400 hover:underline">Resume (PDF)</a>
       </div>
     </div>
   </footer>
@@ -670,8 +721,35 @@
     <i class="fa-solid fa-circle-check"></i> Email copied to clipboard!
   </div>
 
+  <!-- Switch View Helper -->
+  <script>
+    function switchSimView(mode) {
+      const v3 = document.getElementById('threeView');
+      const v2 = document.getElementById('canvasView');
+      const b3 = document.getElementById('tabBtn3D');
+      const b2 = document.getElementById('tabBtn2D');
+
+      if (mode === '3d') {
+        v3.classList.remove('hidden');
+        v2.classList.add('hidden');
+        b3.classList.add('bg-sky-500', 'text-white');
+        b3.classList.remove('text-slate-400');
+        b2.classList.remove('bg-sky-500', 'text-white');
+        b2.classList.add('text-slate-400');
+      } else {
+        v2.classList.remove('hidden');
+        v3.classList.add('hidden');
+        b2.classList.add('bg-sky-500', 'text-white');
+        b2.classList.remove('text-slate-400');
+        b3.classList.remove('bg-sky-500', 'text-white');
+        b3.classList.add('text-slate-400');
+      }
+    }
+  </script>
+
   <!-- Scripts -->
   <script src="js/main.js"></script>
   <script src="js/robot-sim.js"></script>
+  <script src="js/three-robot.js"></script>
 </body>
 </html>

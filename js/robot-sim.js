@@ -1,4 +1,4 @@
-﻿/**
+/**
  * @file robot-sim.js
  * @brief Interactive 3-Link Planar Kinematic Robot Arm Simulator
  * @author Vivek Bharat Toradmal
@@ -253,6 +253,12 @@
       q2 = -40 + 25 * Math.sin(autoTimer * 1.3);
       q3 = 15 + 20 * Math.sin(autoTimer * 0.8);
       drawArm();
+
+      // Synchronize 3D model if active
+      window.dispatchEvent(new CustomEvent('threeSyncAngles', {
+        detail: { q1, q2, q3 }
+      }));
+
       requestAnimationFrame(animate);
     }
   }
