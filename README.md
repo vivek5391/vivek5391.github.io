@@ -4,11 +4,11 @@
 [![Focus](https://img.shields.io/badge/Focus-Robotics%20%26%20Industrial%20Automation-blue.svg)]()
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-Personal engineering portfolio website for **Vivek Bharat Toradmal** — Mechanical & Automation Engineer specializing in:
+Personal engineering portfolio website for **Vivek Bharat Toradmal** — Automation & Robotics Engineer specializing in:
 - **Robotics & Control**: ROS 2 Humble, URDF/Xacro, RViz2, Gazebo, Forward/Inverse Kinematics (FK/IK)
 - **Mechanical CAD/CAM**: Autodesk Fusion 360, Dassault Systèmes SolidWorks, GD&T, 3D Printing (FDM)
 - **Embedded Systems & IoT**: ESP32, FreeRTOS, PlatformIO, Blynk 2.0 Cloud, NVS Flash Storage
-- **Industrial Automation & Web**: Siemens S7-1200 PLC, TIA Portal, Progressive Web Apps (PWA)
+- **Industrial Automation**: Siemens S7-1200 PLC, TIA Portal, Ladder Logic, Sensor Interfacing
 
 ---
 
