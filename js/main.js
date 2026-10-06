@@ -1,4 +1,4 @@
-﻿/**
+/**
  * @file main.js
  * @brief Core Portfolio UI interactions, Project Filtering & Modal Data
  * @author Vivek Bharat Toradmal
@@ -23,25 +23,6 @@ const PROJECTS_DATA = {
       { label: 'Payload Capacity', val: '500g' },
       { label: 'Max Work Reach', val: '380 mm' },
       { label: 'Actuators', val: 'MG996R & SG90' }
-    ]
-  },
-  'eckstein-erp': {
-    title: 'Eckstein Engineering Solutions ERP & Manufacturing Portal',
-    category: 'Enterprise Software & PWA',
-    badges: ['Vanilla JS (ES6+)', 'Progressive Web App (PWA)', 'HTML5 Canvas', 'IndexedDB', 'CAD Engineering Vault'],
-    githubUrl: 'https://github.com/vivek5391/eckstein-engineering-erp',
-    summary: 'A fast, dependency-free enterprise portal built for engineering and precision manufacturing job-shops. Features zero-lag client-side architecture with offline caching.',
-    highlights: [
-      '<b>Smart ID Badge Generator</b>: High-resolution (300 DPI) dual-sided industrial employee ID card rendering with dynamic QR codes, Code128 barcodes, and custom photo uploads.',
-      '<b>CAD Engineering Vault</b>: Central repository for drawings, revisions, and client project assets.',
-      '<b>Live Job Quotation Calculator</b>: Dynamic estimation for machining, materials, and tolerance requirements.',
-      '<b>PWA & Offline Capable</b>: Equipped with Service Worker caching and web manifest for direct desktop/tablet installation.'
-    ],
-    metrics: [
-      { label: 'Rendering Engine', val: 'HTML5 2D Canvas' },
-      { label: 'Resolution', val: 'CR-80 / 300 DPI' },
-      { label: 'Offline Support', val: 'Service Workers' },
-      { label: 'Storage', val: 'IndexedDB & Local' }
     ]
   },
   'esp32-iot': {

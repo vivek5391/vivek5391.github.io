@@ -17,3 +17,4 @@ python -m http.server 3000 2>nul || (
     start "" "%~dp0index.html"
 )
 pause
+
