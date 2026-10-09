@@ -36,10 +36,10 @@
   <!-- Font Awesome 6 Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-  <!-- Three.js CDN and Loaders -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/STLLoader.js"></script>
+  <!-- Three.js Engine & Controls (Local & Offline Ready) -->
+  <script src="js/three.min.js"></script>
+  <script src="js/OrbitControls.js"></script>
+  <script src="js/STLLoader.js"></script>
 
   <!-- Custom Master Styles -->
   <link rel="stylesheet" href="css/style.css">
@@ -247,33 +247,33 @@
           <div class="mb-5">
             <div class="flex justify-between text-xs font-semibold mb-2">
               <span class="text-slate-300 flex items-center gap-1.5">
-                <span class="w-2.5 h-2.5 rounded-full bg-sky-400 inline-block"></span> J1 Base / Shoulder Angle (&theta;<sub>1</sub>)
+                <span class="w-2.5 h-2.5 rounded-full bg-sky-400 inline-block"></span> J1 Base Turntable (&theta;<sub>1</sub>)
               </span>
-              <span id="valQ1" class="text-sky-400 font-mono text-sm">45°</span>
+              <span id="valQ1" class="text-sky-400 font-mono text-sm">0°</span>
             </div>
-            <input id="sliderQ1" type="range" min="-30" max="120" value="45" class="w-full h-2 bg-slate-800 rounded-lg cursor-pointer">
+            <input id="sliderQ1" type="range" min="-90" max="90" value="0" class="w-full h-2 bg-slate-800 rounded-lg cursor-pointer">
           </div>
 
           <!-- Joint 2 Slider -->
           <div class="mb-5">
             <div class="flex justify-between text-xs font-semibold mb-2">
               <span class="text-slate-300 flex items-center gap-1.5">
-                <span class="w-2.5 h-2.5 rounded-full bg-indigo-500 inline-block"></span> J2 Elbow Angle (&theta;<sub>2</sub>)
+                <span class="w-2.5 h-2.5 rounded-full bg-indigo-500 inline-block"></span> J2 Shoulder Pitch (&theta;<sub>2</sub>)
               </span>
-              <span id="valQ2" class="text-indigo-400 font-mono text-sm">-35°</span>
+              <span id="valQ2" class="text-indigo-400 font-mono text-sm">35°</span>
             </div>
-            <input id="sliderQ2" type="range" min="-110" max="90" value="-35" class="w-full h-2 bg-slate-800 rounded-lg cursor-pointer">
+            <input id="sliderQ2" type="range" min="-10" max="105" value="35" class="w-full h-2 bg-slate-800 rounded-lg cursor-pointer">
           </div>
 
           <!-- Joint 3 Slider -->
           <div class="mb-6">
             <div class="flex justify-between text-xs font-semibold mb-2">
               <span class="text-slate-300 flex items-center gap-1.5">
-                <span class="w-2.5 h-2.5 rounded-full bg-purple-500 inline-block"></span> J3 Wrist Angle (&theta;<sub>3</sub>)
+                <span class="w-2.5 h-2.5 rounded-full bg-purple-500 inline-block"></span> J3 Elbow Pitch (&theta;<sub>3</sub>)
               </span>
-              <span id="valQ3" class="text-purple-400 font-mono text-sm">20°</span>
+              <span id="valQ3" class="text-purple-400 font-mono text-sm">-30°</span>
             </div>
-            <input id="sliderQ3" type="range" min="-90" max="90" value="20" class="w-full h-2 bg-slate-800 rounded-lg cursor-pointer">
+            <input id="sliderQ3" type="range" min="-90" max="90" value="-30" class="w-full h-2 bg-slate-800 rounded-lg cursor-pointer">
           </div>
 
           <!-- Action Control Buttons -->
@@ -736,6 +736,9 @@
         b3.classList.remove('text-slate-400');
         b2.classList.remove('bg-sky-500', 'text-white');
         b2.classList.add('text-slate-400');
+        if (window.onWindowResizeThree) {
+          setTimeout(window.onWindowResizeThree, 20);
+        }
       } else {
         v2.classList.remove('hidden');
         v3.classList.add('hidden');
@@ -743,6 +746,9 @@
         b2.classList.remove('text-slate-400');
         b3.classList.remove('bg-sky-500', 'text-white');
         b3.classList.add('text-slate-400');
+        if (window.resizeRobotSim) {
+          setTimeout(window.resizeRobotSim, 20);
+        }
       }
     }
   </script>
@@ -750,6 +756,7 @@
   <!-- Scripts -->
   <script src="js/main.js"></script>
   <script src="js/robot-sim.js"></script>
+  <script src="js/stl-data.js"></script>
   <script src="js/three-robot.js"></script>
 </body>
 </html>

@@ -1,20 +1,17 @@
 @echo off
-title Vivek Bharat Toradmal - Portfolio Server
+title Vivek Bharat Toradmal - Engineering Portfolio
 cd /d "%~dp0"
 
 echo =================================================================
 echo   Vivek Bharat Toradmal - Engineering Portfolio Launcher
-echo   Robotics (ROS 2) ^| CAD/CAM ^| Embedded IoT ^| Industrial ERP
+echo   Robotics (ROS 2) ^| CAD/CAM ^| Embedded IoT ^| 3D Digital Twin
 echo =================================================================
 echo.
-echo Starting local web server on port 3000...
+echo Launching Portfolio in your default web browser...
+
+start "" "%~dp0index.html"
+
 echo.
-
-start "" http://localhost:3000
-
-python -m http.server 3000 2>nul || (
-    echo Python not found in PATH, opening directly in your web browser...
-    start "" "%~dp0index.html"
-)
-pause
-
+echo Application is running! You can close this window at any time.
+timeout /t 3 >nul
+exit

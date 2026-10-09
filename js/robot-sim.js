@@ -18,9 +18,9 @@
   const L3 = 60;  // Forearm to Gripper Tool Center Point (TCP)
 
   // Joint Angles (in degrees)
-  let q1 = 45;   // Base angle
-  let q2 = -35;  // Elbow angle
-  let q3 = 20;   // Wrist angle
+  let q1 = 0;    // J1 Base Turntable
+  let q2 = 35;   // J2 Shoulder Pitch (safe range: -10 to 105)
+  let q3 = -30;  // J3 Elbow Pitch
   let gripperOpen = true;
 
   // Animation State
@@ -41,11 +41,29 @@
   const btnReset = document.getElementById('btnReset');
 
   function resizeCanvas() {
+    const parent = canvas.parentElement;
     const rect = canvas.getBoundingClientRect();
-    canvas.width = rect.width * window.devicePixelRatio;
-    canvas.height = rect.height * window.devicePixelRatio;
-    ctx.scale(window.devicePixelRatio, window.devicePixelRatio);
-    drawArm();
+    let w = rect.width;
+    let h = rect.height;
+
+    if (!w || !h || w < 20 || h < 20) {
+      if (parent) {
+        const pRect = parent.getBoundingClientRect();
+        w = pRect.width;
+        h = pRect.height;
+      }
+    }
+    if (!w || !h || w < 20 || h < 20) {
+      w = 540;
+      h = 405;
+    }
+
+    const dpr = window.devicePixelRatio || 1;
+    canvas.width = Math.round(w * dpr);
+    canvas.height = Math.round(h * dpr);
+    ctx.setTransform(1, 0, 0, 1, 0, 0);
+    ctx.scale(dpr, dpr);
+    drawArm(w, h);
   }
 
   window.addEventListener('resize', resizeCanvas);
@@ -189,10 +207,15 @@
     ctx.restore();
   }
 
-  function drawArm() {
-    const rect = canvas.getBoundingClientRect();
-    const w = rect.width;
-    const h = rect.height;
+  function drawArm(forceW, forceH) {
+    const dpr = window.devicePixelRatio || 1;
+    let w = forceW || canvas.getBoundingClientRect().width || (canvas.width / dpr);
+    let h = forceH || canvas.getBoundingClientRect().height || (canvas.height / dpr);
+
+    if (!w || !h || w < 20 || h < 20) {
+      w = 540;
+      h = 405;
+    }
 
     ctx.clearRect(0, 0, w, h);
 
@@ -203,12 +226,12 @@
     drawGrid(w, h, originX, originY);
 
     // Forward Kinematics Trigonometry:
-    // theta1 relative to horizontal
-    // theta2 relative to link 1
-    // theta3 relative to link 2
-    const a1 = degToRad(q1);
-    const a2 = a1 + degToRad(q2);
-    const a3 = a2 + degToRad(q3);
+    // a1 = Shoulder Pitch (q2)
+    // a2 = a1 + Elbow Pitch (q3)
+    // a3 = a2 (Wrist / Tool orientation)
+    const a1 = degToRad(q2);
+    const a2 = a1 + degToRad(q3);
+    const a3 = a2;
 
     // Joint 1 (Base / Shoulder)
     const j0_x = originX;
@@ -249,9 +272,9 @@
   function animate() {
     if (isAutoRunning) {
       autoTimer += 0.035;
-      q1 = 45 + 30 * Math.sin(autoTimer);
-      q2 = -40 + 25 * Math.sin(autoTimer * 1.3);
-      q3 = 15 + 20 * Math.sin(autoTimer * 0.8);
+      q1 = 25 * Math.sin(autoTimer * 0.7);
+      q2 = 35 + 18 * Math.sin(autoTimer);
+      q3 = -30 + 15 * Math.sin(autoTimer * 1.3);
       drawArm();
 
       // Synchronize 3D model if active
@@ -308,6 +331,9 @@
       gripperOpen = !gripperOpen;
       btnGripper.textContent = gripperOpen ? 'Gripper: Open' : 'Gripper: Closed';
       drawArm();
+      window.dispatchEvent(new CustomEvent('threeToggleGripper', {
+        detail: { open: gripperOpen }
+      }));
     });
   }
 
@@ -315,15 +341,22 @@
     btnReset.addEventListener('click', () => {
       isAutoRunning = false;
       if (btnWave) btnWave.classList.remove('bg-sky-500', 'text-white');
-      q1 = 45;
-      q2 = -35;
-      q3 = 20;
+      q1 = 0;
+      q2 = 35;
+      q3 = -30;
       gripperOpen = true;
       if (btnGripper) btnGripper.textContent = 'Gripper: Open';
       drawArm();
+      window.dispatchEvent(new CustomEvent('threeToggleGripper', {
+        detail: { open: true }
+      }));
     });
   }
 
+  window.resizeRobotSim = resizeCanvas;
+  window.drawRobotArm = drawArm;
+
   // Initialize Canvas
-  setTimeout(resizeCanvas, 100);
+  setTimeout(resizeCanvas, 50);
+  setTimeout(resizeCanvas, 250);
 })();
