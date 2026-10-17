@@ -11,7 +11,7 @@ const PROJECTS_DATA = {
     category: 'Robotics & Control',
     badges: ['ROS 2 Humble', 'URDF / Xacro', 'Three.js 3D Web Twin', 'RViz2', 'Gazebo', 'Autodesk Fusion 360', 'Arduino Serial Bridge'],
     githubUrl: 'https://github.com/vivek5391/6dof-robotic-arm-ros2',
-    summary: 'An end-to-end industrial robotics digital twin and physical prototype. Designed parametrically in Autodesk Fusion 360 and exported with custom physical collision hulls, inertias, and geared 4-bar parallel gripper mimic joints.',
+    summary: 'A ROS 2 Humble digital-twin project for a custom 5-DOF arm with a 1-DOF gripper. The repository contains CAD exports, URDF/Xacro and web-studio code; end-to-end behavior and physical performance should be treated as unverified until tested on the target setup.',
     highlights: [
       '<b>Complete Kinematic Stack</b>: Forward & Inverse Kinematics formulations (FK/IK) with analytical joint angle limits.',
       '<b>Interactive 3D Web Command Center</b>: Runs directly in browser at port 8080 using Three.js, featuring Cartesian jog controls, multi-color cube sorting (RGB), and Teach & Replay waypoint recording.',
@@ -20,8 +20,8 @@ const PROJECTS_DATA = {
     ],
     metrics: [
       { label: 'Degrees of Freedom', val: '5-DOF + Gripper' },
-      { label: 'Payload Capacity', val: '500g' },
-      { label: 'Max Work Reach', val: '380 mm' },
+      { label: 'Payload Capacity', val: 'Not verified' },
+      { label: 'Max Work Reach', val: 'CAD estimate ~340 mm' },
       { label: 'Actuators', val: 'MG996R & SG90' }
     ]
   },
@@ -42,6 +42,25 @@ const PROJECTS_DATA = {
       { label: 'Wireless Protocol', val: 'Wi-Fi 802.11 b/g/n' },
       { label: 'Telemetry Cloud', val: 'Blynk IoT 2.0' },
       { label: 'Relay Rating', val: '10A @ 250VAC' }
+    ]
+  },
+  'amr-ros2': {
+    title: 'Autonomous Mobile Robot — ROS 2 Jazzy',
+    category: 'Robotics & Simulation',
+    badges: ['ROS 2 Jazzy', 'Gazebo Sim Harmonic', 'URDF / Xacro', 'Simulated 2D LiDAR', 'SLAM Toolbox', 'Nav2 preparation'],
+    githubUrl: 'https://github.com/vivek5391/Autonomous-mobile-robot',
+    summary: 'A simulation-first differential-drive mobile robot project. The repository contains robot-description, Gazebo, sensor-bridge, SLAM and navigation setup files. Local build and simulation validation are still pending, so launch and sensor behavior are not yet claimed as verified.',
+    highlights: [
+      '<b>Robot Description</b>: URDF/Xacro model for a differential-drive robot.',
+      '<b>Simulation Target</b>: ROS 2 Jazzy with Gazebo Sim Harmonic and a simulated 2D LiDAR.',
+      '<b>Navigation Preparation</b>: Initial SLAM Toolbox and Nav2 entry points that still require local integration checks and tuning.',
+      '<b>Validation Status</b>: GitHub Actions CI has passed, but this does not replace local Gazebo simulation and topic/TF validation.'
+    ],
+    metrics: [
+      { label: 'ROS Distribution', val: 'Jazzy' },
+      { label: 'Simulator', val: 'Gazebo Harmonic' },
+      { label: 'Build status', val: 'CI passing' },
+      { label: 'Local simulation', val: 'Pending' }
     ]
   },
   'cartesian-3d': {
