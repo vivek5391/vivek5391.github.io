@@ -44,7 +44,7 @@ const PROJECTS_DATA = {
       { label: 'Relay Rating', val: '10A @ 250VAC' }
     ]
   },
-  'corexy-3d': {
+  'cartesian-3d': {
     title: 'Custom-Built Cartesian FDM 3D Printer',
     category: 'Mechanical Design & Fabrication',
     badges: ['Cartesian Motion', 'Marlin Firmware', 'Arduino Mega + RAMPS 1.4', 'BLTouch', 'FDM 3D Printing'],
