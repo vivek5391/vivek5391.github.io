@@ -5,7 +5,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 Personal engineering portfolio website for **Vivek Bharat Toradmal** — Automation & Robotics Engineer specializing in:
-- **Robotics & Control**: ROS 2 Humble, URDF/Xacro, RViz2, Gazebo, Forward/Inverse Kinematics (FK/IK)
+- **Robotics & Control**: ROS 2 Humble/Jazzy, URDF/Xacro, RViz2, Gazebo, Forward/Inverse Kinematics (FK/IK), mobile robot simulation
 - **Mechanical CAD/CAM**: Autodesk Fusion 360, Dassault Systèmes SolidWorks, GD&T, 3D Printing (FDM)
 - **Embedded Systems & IoT**: ESP32, FreeRTOS, PlatformIO, Blynk 2.0 Cloud, NVS Flash Storage
 - **Industrial Automation**: Siemens S7-1200 PLC, TIA Portal, Ladder Logic, Sensor Interfacing
@@ -21,7 +21,9 @@ Personal engineering portfolio website for **Vivek Bharat Toradmal** — Automat
 2. **Project Filter & Modal Breakdown**:
    - Filterable catalog of featured robotics, IoT, CAD, and enterprise software systems.
    - Detailed specifications modal with hardware ratings, architecture notes, and direct GitHub links.
-3. **Responsive Cyber-Engineering Design**:
+3. **Autonomous Mobile Robot Project Card**:
+   - Links to the ROS 2 Jazzy/Gazebo Harmonic AMR repository and clearly labels local simulation validation as pending.
+4. **Responsive Cyber-Engineering Design**:
    - Modern dark glassmorphism theme, ambient glow backdrop, and mobile-responsive layout.
 
 ---
