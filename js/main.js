@@ -33,9 +33,9 @@ const PROJECTS_DATA = {
     summary: 'An ESP32-based IoT controller prototype for remote relay actuation and software-estimated energy telemetry. Measurement accuracy, switching performance, and long-duration reliability require bench validation before they can be claimed.',
     highlights: [
       '<b>NVS Flash Memory Protection</b>: Utilizes non-volatile flash partitions (`Preferences.h`) to periodically checkpoint accumulated kWh metrics, guarding against data loss during industrial power outages.',
-      '<b>Asynchronous Energy Math</b>: Millisecond-accurate electrical energy accumulation engine streamed directly to cloud dashboards.',
-      '<b>Cloud Telemetry & Mobile Sync</b>: Seamlessly connected to Blynk 2.0 with low-latency switching (<150 ms) and real-time power analytics.',
-      '<b>Hardware Safety</b>: Optocoupler-isolated relay driving with status feedback LED and tactile manual override input.'
+      '<b>Energy Calculation</b>: Software-based energy accumulation streamed to cloud dashboards; measurement accuracy requires comparison with a calibrated meter.',
+      '<b>Cloud Telemetry & Mobile Sync</b>: Blynk 2.0 integration for remote control and telemetry; switching latency and measurement accuracy require bench validation.',
+      '<b>Hardware Design</b>: Optocoupler-isolated relay-drive concept with status LED and manual override input; complete electrical safety depends on verified wiring, enclosure, fusing, and isolation.'
     ],
     metrics: [
       { label: 'Microcontroller', val: 'ESP32 (240MHz)' },
