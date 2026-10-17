@@ -45,22 +45,22 @@ const PROJECTS_DATA = {
     ]
   },
   'corexy-3d': {
-    title: 'Precision DIY 3D Printer (CoreXY Architecture)',
-    category: 'Mechanical Design & CAD',
-    badges: ['CoreXY Kinematics', 'Marlin 2.0 Firmware', 'SolidWorks CAD', 'TMC Silent Steppers', 'FDM 3D Printing'],
+    title: 'Custom-Built Cartesian FDM 3D Printer',
+    category: 'Mechanical Design & Fabrication',
+    badges: ['Cartesian Motion', 'Marlin Firmware', 'Arduino Mega + RAMPS 1.4', 'BLTouch', 'FDM 3D Printing'],
     githubUrl: 'https://github.com/vivek5391/project-portfolio',
-    summary: 'A precision desktop 3D printer engineered with CoreXY kinematics for high-speed, vibration-damped additive manufacturing.',
+    summary: 'A custom-built Cartesian FDM printer using a 2020 frame, Arduino Mega with RAMPS 1.4, and Marlin firmware. Build notes document hardware, bed leveling, calibration, CAD parts, and print observations.',
     highlights: [
-      '<b>CoreXY Kinematic Design</b>: Dual-stationary motor setup drastically reduces gantry moving mass for sharp corners and high print acceleration.',
-      '<b>Custom Mechanical Upgrades</b>: SolidWorks-designed custom hotend cooling duct, rigid aluminum extrusion brackets, and precision belt tensioners.',
-      '<b>Firmware Optimization</b>: Configured Marlin firmware with PID thermal tuning, microstepping calibration, and linear advance.',
-      '<b>Full Build Log</b>: Open-source CAD files, technical drawings, and comprehensive wiring schematics.'
+      '<b>Custom Hardware</b>: Owner-built Cartesian printer with 2020 profiles, belt-driven X/Y motion, and dual Z motors.',
+      '<b>Control Electronics</b>: Arduino Mega + RAMPS 1.4 running Marlin firmware.',
+      '<b>Calibration</b>: BLTouch-assisted bed leveling and ongoing print-quality tuning.',
+      '<b>Build Documentation</b>: Hardware notes, CAD records, photos, firmware configuration snapshot, and print observations.'
     ],
     metrics: [
-      { label: 'Kinematics', val: 'CoreXY Planar' },
-      { label: 'Print Volume', val: '220 x 220 x 250 mm' },
-      { label: 'Firmware', val: 'Marlin 2.0' },
-      { label: 'CAD Software', val: 'SolidWorks' }
+      { label: 'Motion System', val: 'Cartesian' },
+      { label: 'Frame', val: '2020 Profiles' },
+      { label: 'Controller', val: 'Arduino Mega + RAMPS 1.4' },
+      { label: 'Firmware', val: 'Marlin' }
     ]
   }
 };
