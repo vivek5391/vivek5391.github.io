@@ -27,10 +27,10 @@ const PROJECTS_DATA = {
   },
   'esp32-iot': {
     title: 'Industrial IoT Smart Relay & Energy Monitoring Controller',
-    category: 'Embedded Systems & IoT',
+    category: 'Embedded Systems & IoT Prototype',
     badges: ['ESP32 Dual-Core', 'FreeRTOS', 'PlatformIO', 'Blynk IoT 2.0', 'NVS Flash Preferences', 'Galvanic Isolation'],
     githubUrl: 'https://github.com/vivek5391/esp32-industrial-iot-controller',
-    summary: 'An industrial-grade IoT controller engineered on the ESP-WROOM-32 microcontroller for factory equipment power monitoring, remote switching, and continuous telemetry.',
+    summary: 'An ESP32-based IoT controller prototype for remote relay actuation and software-estimated energy telemetry. Measurement accuracy, switching performance, and long-duration reliability require bench validation before they can be claimed.',
     highlights: [
       '<b>NVS Flash Memory Protection</b>: Utilizes non-volatile flash partitions (`Preferences.h`) to periodically checkpoint accumulated kWh metrics, guarding against data loss during industrial power outages.',
       '<b>Asynchronous Energy Math</b>: Millisecond-accurate electrical energy accumulation engine streamed directly to cloud dashboards.',
