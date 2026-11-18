@@ -49,7 +49,7 @@ const PROJECTS_DATA = {
     category: 'Robotics & Control',
     badges: ['ROS 2 Humble', 'URDF / Xacro', 'Three.js 3D Web Twin', 'RViz2', 'Gazebo', 'Autodesk Fusion 360', 'Arduino Serial Bridge'],
     githubUrl: 'https://github.com/vivek5391/6dof-robotic-arm-ros2',
-    summary: 'An end-to-end industrial robotics digital twin and physical prototype. Designed parametrically in Autodesk Fusion 360 and exported with custom physical collision hulls, inertias, and geared 4-bar parallel gripper mimic joints.',
+    summary: 'A ROS 2 Humble digital-twin project for a custom 5-DOF arm with a 1-DOF gripper. The repository contains CAD exports, URDF/Xacro and web-studio code; end-to-end behavior and physical performance should be treated as unverified until tested on the target setup.',
     highlights: [
       '<b>Complete Kinematic Stack</b>: Forward & Inverse Kinematics formulations (FK/IK) with analytical joint angle limits.',
       '<b>Interactive 3D Web Command Center</b>: Runs directly in browser at port 8080 using Three.js, featuring Cartesian jog controls, multi-color cube sorting (RGB), and Teach & Replay waypoint recording.',
@@ -58,22 +58,22 @@ const PROJECTS_DATA = {
     ],
     metrics: [
       { label: 'Degrees of Freedom', val: '5-DOF + Gripper' },
-      { label: 'Payload Capacity', val: '500g' },
-      { label: 'Max Work Reach', val: '380 mm' },
+      { label: 'Payload Capacity', val: 'Not verified' },
+      { label: 'Max Work Reach', val: 'CAD estimate ~340 mm' },
       { label: 'Actuators', val: 'MG996R & SG90' }
     ]
   },
   'esp32-iot': {
     title: 'Industrial IoT Smart Relay & Energy Monitoring Controller',
-    category: 'Embedded Systems & IoT',
+    category: 'Embedded Systems & IoT Prototype',
     badges: ['ESP32 Dual-Core', 'FreeRTOS', 'PlatformIO', 'Blynk IoT 2.0', 'NVS Flash Preferences', 'Galvanic Isolation'],
     githubUrl: 'https://github.com/vivek5391/esp32-industrial-iot-controller',
-    summary: 'An industrial-grade IoT controller engineered on the ESP-WROOM-32 microcontroller for factory equipment power monitoring, remote switching, and continuous telemetry.',
+    summary: 'An ESP32-based IoT controller prototype for remote relay actuation and software-estimated energy telemetry. Measurement accuracy, switching performance, and long-duration reliability require bench validation before they can be claimed.',
     highlights: [
       '<b>NVS Flash Memory Protection</b>: Utilizes non-volatile flash partitions (`Preferences.h`) to periodically checkpoint accumulated kWh metrics, guarding against data loss during industrial power outages.',
-      '<b>Asynchronous Energy Math</b>: Millisecond-accurate electrical energy accumulation engine streamed directly to cloud dashboards.',
-      '<b>Cloud Telemetry & Mobile Sync</b>: Seamlessly connected to Blynk 2.0 with low-latency switching (<150 ms) and real-time power analytics.',
-      '<b>Hardware Safety</b>: Optocoupler-isolated relay driving with status feedback LED and tactile manual override input.'
+      '<b>Energy Calculation</b>: Software-based energy accumulation streamed to cloud dashboards; measurement accuracy requires comparison with a calibrated meter.',
+      '<b>Cloud Telemetry & Mobile Sync</b>: Blynk 2.0 integration for remote control and telemetry; switching latency and measurement accuracy require bench validation.',
+      '<b>Hardware Design</b>: Optocoupler-isolated relay-drive concept with status LED and manual override input; complete electrical safety depends on verified wiring, enclosure, fusing, and isolation.'
     ],
     metrics: [
       { label: 'Microcontroller', val: 'ESP32 (240MHz)' },
@@ -82,23 +82,42 @@ const PROJECTS_DATA = {
       { label: 'Relay Rating', val: '10A @ 250VAC' }
     ]
   },
-  'corexy-3d': {
-    title: 'Precision DIY 3D Printer (CoreXY Architecture)',
-    category: 'Mechanical Design & CAD',
-    badges: ['CoreXY Kinematics', 'Marlin 2.0 Firmware', 'SolidWorks CAD', 'TMC Silent Steppers', 'FDM 3D Printing'],
-    githubUrl: 'https://github.com/vivek5391/project-portfolio',
-    summary: 'A precision desktop 3D printer engineered with CoreXY kinematics for high-speed, vibration-damped additive manufacturing.',
+  'amr-ros2': {
+    title: 'Autonomous Mobile Robot — ROS 2 Jazzy',
+    category: 'Robotics & Simulation',
+    badges: ['ROS 2 Jazzy', 'Gazebo Sim Harmonic', 'URDF / Xacro', 'Simulated 2D LiDAR', 'SLAM Toolbox', 'Nav2 preparation'],
+    githubUrl: 'https://github.com/vivek5391/Autonomous-mobile-robot',
+    summary: 'A simulation-first differential-drive mobile robot project. The repository contains robot-description, Gazebo, sensor-bridge, SLAM and navigation setup files. Local build and simulation validation are still pending, so launch and sensor behavior are not yet claimed as verified.',
     highlights: [
-      '<b>CoreXY Kinematic Design</b>: Dual-stationary motor setup drastically reduces gantry moving mass for sharp corners and high print acceleration.',
-      '<b>Custom Mechanical Upgrades</b>: SolidWorks-designed custom hotend cooling duct, rigid aluminum extrusion brackets, and precision belt tensioners.',
-      '<b>Firmware Optimization</b>: Configured Marlin firmware with PID thermal tuning, microstepping calibration, and linear advance.',
-      '<b>Full Build Log</b>: Open-source CAD files, technical drawings, and comprehensive wiring schematics.'
+      '<b>Robot Description</b>: URDF/Xacro model for a differential-drive robot.',
+      '<b>Simulation Target</b>: ROS 2 Jazzy with Gazebo Sim Harmonic and a simulated 2D LiDAR.',
+      '<b>Navigation Preparation</b>: Initial SLAM Toolbox and Nav2 entry points that still require local integration checks and tuning.',
+      '<b>Validation Status</b>: GitHub Actions CI has passed, but this does not replace local Gazebo simulation and topic/TF validation.'
     ],
     metrics: [
-      { label: 'Kinematics', val: 'CoreXY Planar' },
-      { label: 'Print Volume', val: '220 x 220 x 250 mm' },
-      { label: 'Firmware', val: 'Marlin 2.0' },
-      { label: 'CAD Software', val: 'SolidWorks' }
+      { label: 'ROS Distribution', val: 'Jazzy' },
+      { label: 'Simulator', val: 'Gazebo Harmonic' },
+      { label: 'Build status', val: 'CI passing' },
+      { label: 'Local simulation', val: 'Pending' }
+    ]
+  },
+  'cartesian-3d': {
+    title: 'Custom-Built Cartesian FDM 3D Printer',
+    category: 'Mechanical Design & Fabrication',
+    badges: ['Cartesian Motion', 'Marlin Firmware', 'Arduino Mega + RAMPS 1.4', 'BLTouch', 'FDM 3D Printing'],
+    githubUrl: 'https://github.com/vivek5391/project-portfolio',
+    summary: 'A custom-built Cartesian FDM printer using a 2020 frame, Arduino Mega with RAMPS 1.4, and Marlin firmware. Build notes document hardware, bed leveling, calibration, CAD parts, and print observations.',
+    highlights: [
+      '<b>Custom Hardware</b>: Owner-built Cartesian printer with 2020 profiles, belt-driven X/Y motion, and dual Z motors.',
+      '<b>Control Electronics</b>: Arduino Mega + RAMPS 1.4 running Marlin firmware.',
+      '<b>Calibration</b>: BLTouch-assisted bed leveling and ongoing print-quality tuning.',
+      '<b>Build Documentation</b>: Hardware notes, CAD records, photos, firmware configuration snapshot, and print observations.'
+    ],
+    metrics: [
+      { label: 'Motion System', val: 'Cartesian' },
+      { label: 'Frame', val: '2020 Profiles' },
+      { label: 'Controller', val: 'Arduino Mega + RAMPS 1.4' },
+      { label: 'Firmware', val: 'Marlin' }
     ]
   }
 };

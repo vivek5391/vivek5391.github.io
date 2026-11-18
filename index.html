@@ -429,7 +429,7 @@
               5-DOF Articulated Robotic Arm Digital Twin & Geared Gripper
             </h3>
             <p class="text-slate-300 text-xs sm:text-sm leading-relaxed mb-5">
-              Comprehensive ROS 2 Humble package designed parametrically in Autodesk Fusion 360. Features URDF/Xacro kinematic physics, a Three.js 3D Web Command Studio at port 8080 with RGB cube sorting, and real-time serial synchronization to an Arduino/ESP32 servo controller.
+              ROS 2 Humble digital-twin project for a custom 5-DOF arm with a 1-DOF gripper. Repository includes URDF/Xacro, CAD exports, a Three.js web studio, and hardware-bridge code; end-to-end and physical behavior should be verified on the target setup.
             </p>
             <div class="flex flex-wrap gap-1.5 mb-6">
               <span class="tech-pill"><i class="fa-solid fa-code-branch text-indigo-400"></i> ROS 2 Humble</span>
@@ -486,7 +486,43 @@
           </div>
         </div>
 
-        <!-- Project 5: Precision CoreXY 3D Printer -->
+        <!-- Project 5: Autonomous Mobile Robot (ROS 2) -->
+        <div class="project-card glass-card rounded-2xl p-6 sm:p-8 flex flex-col justify-between" data-category="robotics">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="text-xs font-semibold px-2.5 py-1 rounded bg-amber-500/10 text-amber-300 border border-amber-500/20">
+                In Development · Simulation First
+              </span>
+              <a href="https://github.com/vivek5391/Autonomous-mobile-robot" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-white text-sm transition">
+                <i class="fa-brands fa-github text-lg"></i>
+              </a>
+            </div>
+            <h3 class="text-xl font-bold text-white mb-2 group-hover:text-sky-400 transition">
+              Autonomous Mobile Robot — ROS 2
+            </h3>
+            <p class="text-slate-300 text-xs sm:text-sm leading-relaxed mb-5">
+              A simulation-first differential-drive robot project targeting ROS 2 Jazzy and Gazebo Sim Harmonic, with a URDF/Xacro model, simulated 2D LiDAR, ROS-Gazebo topic bridging, and initial SLAM Toolbox and Nav2 setup. Local build and simulation validation are still pending.
+            </p>
+            <div class="flex flex-wrap gap-1.5 mb-6">
+              <span class="tech-pill"><i class="fa-solid fa-code-branch text-sky-400"></i> ROS 2 Jazzy</span>
+              <span class="tech-pill">URDF / Xacro</span>
+              <span class="tech-pill">Gazebo Sim</span>
+              <span class="tech-pill">2D LiDAR</span>
+              <span class="tech-pill">SLAM Toolbox</span>
+              <span class="tech-pill">Nav2 Preparation</span>
+            </div>
+          </div>
+          <div class="pt-4 border-t border-white/10 flex items-center justify-between gap-3">
+            <button onclick="openProjectModal('amr-ros2')" class="text-xs font-semibold text-sky-400 hover:text-sky-300 flex items-center gap-1.5 transition">
+              Project Details <i class="fa-solid fa-arrow-right text-[10px]"></i>
+            </button>
+            <a href="https://github.com/vivek5391/Autonomous-mobile-robot" target="_blank" rel="noopener noreferrer" class="text-xs font-medium text-slate-400 hover:text-white transition">
+              View Repository →
+            </a>
+          </div>
+        </div>
+
+        <!-- Project 6: Custom Cartesian FDM 3D Printer -->
         <div class="project-card glass-card rounded-2xl p-6 sm:p-8 flex flex-col justify-between" data-category="cad">
           <div>
             <div class="flex items-center justify-between mb-4">
@@ -498,23 +534,22 @@
               </a>
             </div>
             <h3 class="text-xl font-bold text-white mb-2">
-              Precision DIY 3D Printer (CoreXY Architecture)
+              Custom-Built Cartesian FDM 3D Printer
             </h3>
             <p class="text-slate-300 text-xs sm:text-sm leading-relaxed mb-5">
-              High-speed, vibration-damped additive manufacturing machine. Features custom SolidWorks-designed hotend brackets, rigid 2020 extrusion geometry, Marlin 2.0 firmware microstepping calibration, and full bill of materials build notes.
+              A custom-built Cartesian FDM printer using a 2020 frame, Arduino Mega + RAMPS 1.4, and Marlin firmware. Project notes cover hardware, BLTouch bed leveling, calibration, CAD parts, and print observations.
             </p>
             <div class="flex flex-wrap gap-1.5 mb-6">
-              <span class="tech-pill"><i class="fa-solid fa-cube text-purple-400"></i> CoreXY Kinematics</span>
+              <span class="tech-pill"><i class="fa-solid fa-cube text-indigo-400"></i> Cartesian Motion</span>
               <span class="tech-pill">Marlin 2.0</span>
-              <span class="tech-pill">SolidWorks CAD</span>
+              <span class="tech-pill">FreeCAD CAD</span>
               <span class="tech-pill">Stepper Drivers</span>
               <span class="tech-pill">FDM 3D Printing</span>
             </div>
+            </div>
           </div>
           <div class="pt-4 border-t border-white/10 flex items-center justify-between">
-            <button onclick="openProjectModal('corexy-3d')" class="text-xs font-semibold text-sky-400 hover:text-sky-300 flex items-center gap-1.5 transition">
-              Technical Specs & Architecture <i class="fa-solid fa-arrow-right text-[10px]"></i>
-            </button>
+            <span class="text-xs text-slate-400">Build notes & calibration</span>
             <a href="https://github.com/vivek5391/project-portfolio" target="_blank" class="text-xs font-medium text-slate-400 hover:text-white transition">
               View Repository →
             </a>
@@ -565,7 +600,7 @@
           <p class="text-xs text-slate-400 mb-4">Precision mechanical engineering, assembly, and manufacturing drawings.</p>
           <ul class="space-y-2 text-xs text-slate-300">
             <li class="flex items-center gap-2"><i class="fa-solid fa-check text-indigo-400"></i> Autodesk Fusion 360</li>
-            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-indigo-400"></i> Dassault Systèmes SolidWorks</li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-indigo-400"></i> FreeCAD / CATIA</li>
             <li class="flex items-center gap-2"><i class="fa-solid fa-check text-indigo-400"></i> Geometric Dimensioning & Tolerancing (GD&T)</li>
             <li class="flex items-center gap-2"><i class="fa-solid fa-check text-indigo-400"></i> 3D Printing & Rapid Prototyping (FDM)</li>
             <li class="flex items-center gap-2"><i class="fa-solid fa-check text-indigo-400"></i> 3D STEP Assembly & 2D Drafting (PDF)</li>
@@ -662,7 +697,7 @@
           <div class="text-4xl font-extrabold text-sky-500/20 font-mono mb-4">01</div>
           <h4 class="text-base font-bold text-white mb-2">Parametric CAD Design</h4>
           <p class="text-xs text-slate-400 leading-relaxed">
-            Drafting link geometries in Fusion 360 / SolidWorks, accounting for bearings, servo horns, fastener clearances, and center-of-mass distributions.
+            Drafting link geometries in Fusion 360, CATIA, and FreeCAD, accounting for bearings, servo horns, fastener clearances, and center-of-mass distributions.
           </p>
         </div>
 
