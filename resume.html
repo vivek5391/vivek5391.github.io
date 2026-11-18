@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Resume — Vivek Bharat Toradmal | Automation & Robotics Engineer</title>
+  <title>Resume — Vivek Bharat Toradmal | Electrical Automation Engineer</title>
   
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -27,17 +27,24 @@
       body {
         background-color: #ffffff !important;
         color: #0f172a !important;
-        font-size: 11pt;
+        font-size: 10pt;
+        padding: 0 !important;
+        margin: 0 !important;
       }
       .resume-paper {
         box-shadow: none !important;
         border: none !important;
         max-width: 100% !important;
-        padding: 0 !important;
+        padding: 0.5in 0.6in !important;
+        border-radius: 0 !important;
       }
       a {
         text-decoration: none !important;
         color: inherit !important;
+      }
+      .page-break-inside-avoid {
+        break-inside: avoid;
+        page-break-inside: avoid;
       }
     }
   </style>
@@ -50,9 +57,12 @@
       <i class="fa-solid fa-arrow-left"></i> Back to Portfolio
     </a>
 
-    <div class="flex items-center gap-3">
+    <div class="flex flex-wrap items-center gap-3">
+      <a href="assets/Vivek_Toradmal_Resume.pdf" download="Vivek_Bharat_Toradmal_Resume.pdf" class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-semibold text-sm shadow-lg shadow-emerald-600/20 transition">
+        <i class="fa-solid fa-download"></i> Download PDF
+      </a>
       <button onclick="window.print()" class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-sky-500 hover:bg-sky-600 text-white font-semibold text-sm shadow-lg shadow-sky-500/20 transition">
-        <i class="fa-solid fa-print"></i> Print / Save as PDF
+        <i class="fa-solid fa-print"></i> Print Resume
       </button>
       <a href="https://github.com/vivek5391" target="_blank" class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-slate-700 hover:bg-slate-600 text-white font-semibold text-sm transition">
         <i class="fa-brands fa-github"></i> GitHub Profile
@@ -64,135 +74,165 @@
   <main class="resume-paper max-w-4xl mx-auto bg-white text-slate-900 p-8 sm:p-12 rounded-2xl shadow-2xl border border-slate-200">
     
     <!-- Header Section -->
-    <header class="border-b-2 border-slate-900 pb-6 mb-6">
-      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-        <div>
-          <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-950 tracking-tight">Vivek Bharat Toradmal</h1>
-          <p class="text-base sm:text-lg font-semibold text-sky-700 mt-1">Automation & Robotics Engineer</p>
-          <p class="text-xs text-slate-600 mt-0.5">Robotics (ROS 2) • Kinematics & Digital Twins • Embedded IoT (ESP32) • Industrial Automation (PLC)</p>
-        </div>
-
-        <div class="text-xs space-y-1 text-slate-600 sm:text-right font-medium">
-          <div><i class="fa-solid fa-location-dot text-slate-400 w-4"></i> Maharashtra, India</div>
-          <div><i class="fa-solid fa-envelope text-slate-400 w-4"></i> vivektoradamal@gmail.com</div>
-          <div><i class="fa-brands fa-github text-slate-400 w-4"></i> github.com/vivek5391</div>
-          <div><i class="fa-solid fa-globe text-slate-400 w-4"></i> vivek5391.github.io</div>
-        </div>
+    <header class="text-center border-b-2 border-slate-900 pb-5 mb-5">
+      <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-950 tracking-tight uppercase">Vivek Bharat Toradmal</h1>
+      <p class="text-sm sm:text-base font-bold text-sky-700 tracking-wide mt-1 uppercase">Electrical Automation Engineer | Automation & Robotics</p>
+      
+      <div class="flex flex-wrap items-center justify-center gap-x-4 gap-y-1 text-xs text-slate-600 font-medium mt-2">
+        <span class="flex items-center gap-1.5"><i class="fa-solid fa-location-dot text-slate-400"></i> Pune, Maharashtra, India</span>
+        <span class="hidden sm:inline text-slate-300">•</span>
+        <a href="mailto:vivektoradamal@gmail.com" class="flex items-center gap-1.5 hover:text-sky-600 transition"><i class="fa-solid fa-envelope text-slate-400"></i> vivektoradamal@gmail.com</a>
+        <span class="hidden sm:inline text-slate-300">•</span>
+        <a href="https://github.com/vivek5391" target="_blank" class="flex items-center gap-1.5 hover:text-sky-600 transition"><i class="fa-brands fa-github text-slate-400"></i> github.com/vivek5391</a>
+        <span class="hidden sm:inline text-slate-300">•</span>
+        <a href="https://vivek5391.github.io" target="_blank" class="flex items-center gap-1.5 hover:text-sky-600 transition"><i class="fa-solid fa-globe text-slate-400"></i> vivek5391.github.io</a>
       </div>
     </header>
 
     <!-- Professional Summary -->
-    <section class="mb-6">
-      <h2 class="text-xs font-bold uppercase tracking-widest text-slate-900 border-b border-slate-300 pb-1 mb-2">Professional Summary</h2>
-      <p class="text-xs sm:text-sm text-slate-700 leading-relaxed">
-        Passionate and hands-on <strong>Automation & Robotics Engineer</strong> with extensive experience developing robotic systems, formulating kinematic models in <strong>ROS 2 Humble & Gazebo</strong>, designing precision CAD assemblies, and engineering industrial embedded firmware for <strong>ESP32 & Arduino</strong>. Specialized in bridging mechanical actuation and physical sensor tolerances with robust mathematical control theory, PLC automation, and cloud telemetry.
+    <section class="mb-5 page-break-inside-avoid">
+      <h2 class="text-xs font-bold uppercase tracking-wider text-slate-900 border-b border-slate-300 pb-1 mb-2">Professional Summary</h2>
+      <p class="text-xs sm:text-[13px] text-slate-700 leading-relaxed text-justify">
+        Automation & Robotics Engineering graduate with hands-on project experience in Delta PLC-based automation and training exposure to multiple industrial PLC platforms. Familiar with ladder logic, digital and analog I/O, industrial sensors, relay-based control, and basic HMI/SCADA concepts. Interested in PLC programming, machine automation, commissioning support, and industrial troubleshooting. Also has project exposure to Arduino, ESP32, CAD, and robotics.
       </p>
     </section>
 
     <!-- Technical Skills Matrix -->
-    <section class="mb-6">
-      <h2 class="text-xs font-bold uppercase tracking-widest text-slate-900 border-b border-slate-300 pb-1 mb-3">Technical Competencies</h2>
-      <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2 text-xs text-slate-700">
-        <div>
-          <span class="font-bold text-slate-900">Robotics & Simulation:</span> 
-          ROS 2 (Humble), URDF / Xacro, RViz2, Gazebo Simulation, Forward & Inverse Kinematics (FK/IK), Hardware Bridges.
+    <section class="mb-5 page-break-inside-avoid">
+      <h2 class="text-xs font-bold uppercase tracking-wider text-slate-900 border-b border-slate-300 pb-1 mb-2.5">Technical Skills</h2>
+      <div class="border border-slate-200 rounded-lg overflow-hidden text-xs">
+        <div class="grid grid-cols-1 sm:grid-cols-4 border-b border-slate-200 bg-slate-50">
+          <div class="p-2 sm:p-2.5 font-bold text-slate-900 border-b sm:border-b-0 sm:border-r border-slate-200 sm:col-span-1">PLC & Automation</div>
+          <div class="p-2 sm:p-2.5 text-slate-700 sm:col-span-3">Ladder Logic (LAD), PLC fundamentals, digital/analog I/O, sequence control; training exposure to Siemens, Delta, Mitsubishi, Allen-Bradley, Schneider, and Omron PLCs.</div>
         </div>
-        <div>
-          <span class="font-bold text-slate-900">Mechanical CAD & CAM:</span> 
-          Autodesk Fusion 360, SolidWorks, GD&T, 3D Printing (FDM/CoreXY), STEP 3D Assemblies, Technical 2D Drafting.
+        <div class="grid grid-cols-1 sm:grid-cols-4 border-b border-slate-200">
+          <div class="p-2 sm:p-2.5 font-bold text-slate-900 border-b sm:border-b-0 sm:border-r border-slate-200 sm:col-span-1 bg-slate-50 sm:bg-white">HMI & SCADA</div>
+          <div class="p-2 sm:p-2.5 text-slate-700 sm:col-span-3">Basic understanding of HMI configuration and SCADA monitoring concepts; Siemens WinCC and Wonderware InTouch familiarity through study/preparation.</div>
         </div>
-        <div>
-          <span class="font-bold text-slate-900">Embedded Systems & IoT:</span> 
-          ESP-WROOM-32, Arduino, FreeRTOS, PlatformIO, Blynk 2.0 Cloud, NVS Flash Storage, UART/I2C/SPI, Optocouplers.
+        <div class="grid grid-cols-1 sm:grid-cols-4 border-b border-slate-200 bg-slate-50">
+          <div class="p-2 sm:p-2.5 font-bold text-slate-900 border-b sm:border-b-0 sm:border-r border-slate-200 sm:col-span-1">Electrical & Sensors</div>
+          <div class="p-2 sm:p-2.5 text-slate-700 sm:col-span-3">Proximity/inductive sensors, relay actuation, timers, counters, basic control circuits and panel-wiring concepts; foundational electrical troubleshooting.</div>
         </div>
-        <div>
-          <span class="font-bold text-slate-900">Industrial Automation:</span> 
-          Siemens PLC (S7-1200), TIA Portal, Ladder Logic (LAD), Sensor Interfacing, Relay Actuation.
-        </div>
-        <div class="sm:col-span-2">
-          <span class="font-bold text-slate-900">Programming & Software:</span> 
-          C, C++, Python, JavaScript (ES6+), Three.js WebGL, HTML5 Canvas, Git & GitHub, Linux (WSL2/Ubuntu).
+        <div class="grid grid-cols-1 sm:grid-cols-4">
+          <div class="p-2 sm:p-2.5 font-bold text-slate-900 border-b sm:border-b-0 sm:border-r border-slate-200 sm:col-span-1 bg-slate-50 sm:bg-white">Software & Tools</div>
+          <div class="p-2 sm:p-2.5 text-slate-700 sm:col-span-3">Siemens TIA Portal, Delta WPLSoft; Arduino IDE, C, Python, OpenCV, Git/GitHub; Fusion 360, CATIA, FreeCAD; Linux/Ubuntu and ROS 2 (additional).</div>
         </div>
       </div>
     </section>
 
-    <!-- Core Engineering Projects -->
-    <section class="mb-6">
-      <h2 class="text-xs font-bold uppercase tracking-widest text-slate-900 border-b border-slate-300 pb-1 mb-3">Featured Engineering Projects</h2>
+    <!-- Industrial Automation Projects -->
+    <section class="mb-5 page-break-inside-avoid">
+      <h2 class="text-xs font-bold uppercase tracking-wider text-slate-900 border-b border-slate-300 pb-1 mb-3">Industrial Automation Projects</h2>
       
       <div class="space-y-4">
+        <!-- Project 1: Delta DVP-SA2 PLC -->
+        <div>
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between text-xs">
+            <span class="font-bold text-slate-900 text-sm">Delta DVP-SA2 PLC-Based Bolt Sorting & Pick-and-Place System</span>
+            <span class="text-sky-700 font-semibold mt-0.5 sm:mt-0">Delta PLC • WPLSoft • Sensors • Stepper Control</span>
+          </div>
+          <div class="text-[11px] text-slate-500 font-medium mb-1.5">Hands-on project | Role: Ladder logic programming and design</div>
+          <ul class="list-disc list-outside ml-4 text-xs text-slate-700 space-y-1">
+            <li>Developed PLC ladder logic for an automated bolt-sorting sequence using a <strong>Delta DVP-SA2 PLC</strong>.</li>
+            <li>Utilized an analog height input and an inductive/proximity sensor array as part of the component sorting and detection logic.</li>
+            <li>Implemented conveyor stop/control logic and stepper-motor output sequencing for high-accuracy pick-and-place operation.</li>
+            <li>Configured status indicator lights and safety interlocks to display machine state, operational alerts, and sequence transitions.</li>
+          </ul>
+        </div>
+
+        <!-- Project 2: Nut-Bot Automation Sorting Project -->
+        <div>
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between text-xs">
+            <span class="font-bold text-slate-900 text-sm">Nut-Bot Automation Sorting Project</span>
+            <span class="text-sky-700 font-semibold mt-0.5 sm:mt-0">PLC • AI Vision (OpenCV) • HMI • Conveyor Sorting</span>
+          </div>
+          <div class="text-[11px] text-slate-500 font-medium mb-1.5">Role: PLC programming, vision system integration, and testing</div>
+          <ul class="list-disc list-outside ml-4 text-xs text-slate-700 space-y-1">
+            <li>Developed an automated industrial sorting system integrating PLC, sensors, AI vision (OpenCV), and HMI to automate sorting of nuts and bolts.</li>
+            <li>Designed a high-throughput conveyor-based sorting mechanism to improve sorting accuracy and eliminate manual classification effort.</li>
+            <li>Engineered the camera vision inspection pipeline with OpenCV to detect dimensions/geometry and trigger PLC sorting diverters in real time.</li>
+            <li>Conducted comprehensive system integration, I/O verification, and rigorous testing for seamless HMI monitoring and fault detection.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Training -->
+    <section class="mb-5 page-break-inside-avoid">
+      <h2 class="text-xs font-bold uppercase tracking-wider text-slate-900 border-b border-slate-300 pb-1 mb-2.5">Training</h2>
+      <div>
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between text-xs">
+          <span class="font-bold text-slate-900 text-[13px]">Industrial Automation Training – EduTech Automation, Nashik</span>
+          <span class="text-slate-600 font-medium">3 months</span>
+        </div>
+        <p class="text-xs text-slate-700 mt-1 leading-relaxed">
+          Training exposure to <strong>Siemens, Delta, Mitsubishi, Allen-Bradley, Schneider, and Omron PLC platforms</strong>, along with HMI and SCADA fundamentals. Focus areas included PLC architecture, Ladder Logic (LAD), digital & analog I/O configuration, timer/counter routines, and industrial automation concepts.
+        </p>
+      </div>
+    </section>
+
+    <!-- Internship Experience -->
+    <section class="mb-5 page-break-inside-avoid">
+      <h2 class="text-xs font-bold uppercase tracking-wider text-slate-900 border-b border-slate-300 pb-1 mb-2.5">Internship Experience</h2>
+      <div>
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between text-xs">
+          <span class="font-bold text-slate-900 text-[13px]">M Cad Solutions – Internship</span>
+          <span class="text-slate-600 font-medium">2 months | Robotics / CAD project exposure</span>
+        </div>
+        <p class="text-xs text-slate-700 mt-1 leading-relaxed">
+          Worked on a humanoid robotics project with exposure to robot model design and URDF coding. Applied CAD modeling principles and robotics kinematics fundamentals to support mechanical simulation and project deliverables.
+        </p>
+      </div>
+    </section>
+
+    <!-- Additional Engineering Projects -->
+    <section class="mb-5 page-break-inside-avoid">
+      <h2 class="text-xs font-bold uppercase tracking-wider text-slate-900 border-b border-slate-300 pb-1 mb-3">Additional Engineering Projects</h2>
+      
+      <div class="space-y-3">
         <!-- Project 1 -->
         <div>
           <div class="flex flex-col sm:flex-row sm:items-center justify-between text-xs">
-            <span class="font-bold text-slate-900 text-sm">5-DOF Articulated Robotic Arm Digital Twin & Geared Gripper</span>
-            <span class="text-sky-700 font-medium">ROS 2 • Three.js • Fusion 360 • Arduino</span>
+            <span class="font-bold text-slate-900 text-xs">Custom DIY 3D Printer</span>
+            <span class="text-sky-700 font-medium">Arduino Mega • RAMPS 1.4 • Marlin 2.0 • SolidWorks</span>
           </div>
-          <div class="text-[11px] text-slate-500 mb-1">GitHub: github.com/vivek5391/6dof-robotic-arm-ros2</div>
-          <ul class="list-disc list-outside ml-4 text-xs text-slate-700 space-y-1">
-            <li>Designed a complete 5-DOF articulated robot arm with 4-bar parallel gripper linkage in Autodesk Fusion 360 and exported unified URDF/Xacro models with physical collision hulls and inertial tensors.</li>
-            <li>Constructed an interactive 3D Web Command Studio running on Three.js with Cartesian IK jog controls, RGB color sorting, and joint angle telemetry.</li>
-            <li>Programmed a Python hardware serial bridge to synchronize virtual joint angles to physical Arduino/ESP32 driving MG996R and SG90 servos with 50 Hz PWM microsecond telemetry.</li>
-            <li>Published complete CAD package including 7.3 MB 3D STEP assembly and technical PDF drawings.</li>
-          </ul>
+          <p class="text-xs text-slate-700 mt-0.5 leading-relaxed">
+            Built and configured a custom 3D printer using Arduino Mega, RAMPS 1.4 shield, and Marlin 2.0 firmware. Calibrated stepper-motor control, implemented BLTouch-based auto bed levelling, and performed PID thermal tuning.
+          </p>
         </div>
 
         <!-- Project 2 -->
         <div>
           <div class="flex flex-col sm:flex-row sm:items-center justify-between text-xs">
-            <span class="font-bold text-slate-900 text-sm">Industrial IoT Smart Relay & Energy Monitor Controller</span>
-            <span class="text-sky-700 font-medium">ESP32 • FreeRTOS • PlatformIO • Blynk Cloud</span>
+            <span class="font-bold text-slate-900 text-xs">5-DOF Robotic Arm & Digital Twin</span>
+            <span class="text-sky-700 font-medium">ROS 2 Humble • Fusion 360 • Arduino / ESP32 • WebGL</span>
           </div>
-          <div class="text-[11px] text-slate-500 mb-1">GitHub: github.com/vivek5391/esp32-industrial-iot-controller</div>
-          <ul class="list-disc list-outside ml-4 text-xs text-slate-700 space-y-1">
-            <li>Engineered an industrial equipment controller on ESP-WROOM-32 featuring optocoupler-isolated relay actuation and real-time electrical energy consumption integration ($kWh$).</li>
-            <li>Implemented Non-Volatile Storage (NVS Flash via <code class="font-mono text-[11px]">Preferences.h</code>) to periodically checkpoint energy metrics, ensuring complete data retention across factory power outages.</li>
-            <li>Integrated bidirectional cloud synchronization with Blynk 2.0 Cloud for low-latency (<150 ms) remote smartphone/web switching and live telemetry charts.</li>
-          </ul>
-        </div>
-
-        <!-- Project 3 -->
-        <div>
-          <div class="flex flex-col sm:flex-row sm:items-center justify-between text-xs">
-            <span class="font-bold text-slate-900 text-sm">Precision DIY 3D Printer (CoreXY Architecture)</span>
-            <span class="text-sky-700 font-medium">CoreXY • SolidWorks • Marlin 2.0 • Stepper Tuning</span>
-          </div>
-          <div class="text-[11px] text-slate-500 mb-1">GitHub: github.com/vivek5391/project-portfolio</div>
-          <ul class="list-disc list-outside ml-4 text-xs text-slate-700 space-y-1">
-            <li>Engineered a custom high-precision CoreXY 3D printer frame utilizing 2020 aluminum extrusions and stationary dual stepper kinematics to minimize gantry inertia.</li>
-            <li>Modeled custom parametric hotend cooling ducts and precision belt tensioners in SolidWorks.</li>
-            <li>Calibrated Marlin 2.0 firmware with PID thermal tuning, stepper microstepping, and linear advance parameters for high-speed print reliability.</li>
-          </ul>
+          <div class="text-[11px] text-slate-500 mb-0.5">GitHub: <a href="https://github.com/vivek5391/6dof-robotic-arm-ros2" target="_blank" class="text-sky-600 hover:underline">github.com/vivek5391/6dof-robotic-arm-ros2</a></div>
+          <p class="text-xs text-slate-700 leading-relaxed">
+            Designed a robotic arm and gripper assembly in Fusion 360; generated URDF/Xacro kinematic models, built ROS 2-based simulations in RViz2/Gazebo, and established serial hardware control for servo motors with an Arduino/ESP32.
+          </p>
         </div>
       </div>
     </section>
 
     <!-- Education -->
-    <section class="mb-6">
-      <h2 class="text-xs font-bold uppercase tracking-widest text-slate-900 border-b border-slate-300 pb-1 mb-2">Education & Credentials</h2>
+    <section class="page-break-inside-avoid">
+      <h2 class="text-xs font-bold uppercase tracking-wider text-slate-900 border-b border-slate-300 pb-1 mb-2">Education</h2>
       <div class="flex flex-col sm:flex-row sm:items-center justify-between text-xs">
         <div>
-          <span class="font-bold text-slate-900">Bachelor of Engineering in Automation & Robotics Engineering</span>
-          <div class="text-slate-600">Specialization in Industrial Robotics, Robot Kinematics, PLC/SCADA Automation & Embedded Systems</div>
+          <span class="font-bold text-slate-900 text-[13px]">Bachelor of Engineering – Automation & Robotics</span>
+          <div class="text-slate-600 font-medium">Savitribai Phule Pune University (SPPU)</div>
         </div>
-        <span class="text-slate-500 font-medium mt-1 sm:mt-0">Maharashtra, India</span>
+        <span class="text-slate-500 font-medium mt-1 sm:mt-0">Pune, Maharashtra, India</span>
       </div>
-    </section>
-
-    <!-- Engineering Philosophy -->
-    <section>
-      <h2 class="text-xs font-bold uppercase tracking-widest text-slate-900 border-b border-slate-300 pb-1 mb-2">Core Engineering Philosophy</h2>
-      <p class="text-xs text-slate-600 italic">
-        "Design with physical reality in mind first — tolerances, thermal dissipation, and inertia — then elevate it with robust mathematical simulation and reliable embedded firmware."
-      </p>
     </section>
 
   </main>
 
   <!-- Print Footer Notice -->
   <div class="no-print text-center text-xs text-slate-500 mt-6">
-    © 2026 Vivek Bharat Toradmal • Generated from Live Engineering Portfolio (<a href="https://vivek5391.github.io" class="text-sky-400 hover:underline">vivek5391.github.io</a>)
+    © 2026 Vivek Bharat Toradmal • Generated from Engineering Portfolio (<a href="https://vivek5391.github.io" class="text-sky-400 hover:underline">vivek5391.github.io</a>)
   </div>
 
 </body>
 </html>
-

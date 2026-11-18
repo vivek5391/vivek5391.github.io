@@ -6,6 +6,44 @@
 
 // Project Detailed Specifications Database
 const PROJECTS_DATA = {
+  'delta-plc-bolt': {
+    title: 'Delta DVP-SA2 PLC-Based Bolt Sorting & Pick-and-Place System',
+    category: 'Industrial Automation & PLC',
+    badges: ['Delta DVP-SA2 PLC', 'Delta WPLSoft', 'Ladder Logic (LAD)', 'Analog Sensors', 'Stepper Positioning', 'Conveyor Automation'],
+    githubUrl: 'https://github.com/vivek5391',
+    summary: 'A hands-on industrial automation system designed for bolt sorting and pick-and-place sequence using a Delta DVP-SA2 PLC with multi-sensor feedback.',
+    highlights: [
+      '<b>Ladder Logic Control</b>: Developed robust PLC ladder logic routines in Delta WPLSoft for automated cycle sequencing, emergency stop handling, and machine interlocks.',
+      '<b>Analog & Digital Sensor Integration</b>: Integrated an analog height sensor for vertical dimension classification paired with inductive/proximity sensors for metallic detection.',
+      '<b>Conveyor & Stepper Sequencing</b>: Implemented conveyor stop/run triggers and coordinated stepper-motor motion output sequencing for accurate pick-and-place transfer.',
+      '<b>Operational Telemetry & Status</b>: Configured industrial indicator lamps, alarm registers, and cycle status flags to display live machine sequencing states.'
+    ],
+    metrics: [
+      { label: 'PLC Controller', val: 'Delta DVP-SA2' },
+      { label: 'Environment', val: 'Delta WPLSoft' },
+      { label: 'Sensor Types', val: 'Analog & Inductive' },
+      { label: 'Motion Control', val: 'Conveyor & Stepper' }
+    ]
+  },
+  'nutbot-sorting': {
+    title: 'Nut-Bot Automation Sorting Project',
+    category: 'PLC & AI Vision Automation',
+    badges: ['Industrial PLC', 'OpenCV Vision', 'HMI Interface', 'Conveyor Sorting', 'Sensor Integration', 'Python'],
+    githubUrl: 'https://github.com/vivek5391',
+    summary: 'An intelligent automated sorting system integrating PLC, sensors, AI vision (OpenCV), and HMI to automate classification and sorting of nuts and bolts.',
+    highlights: [
+      '<b>Conveyor-Based Mechanical Mechanism</b>: Designed an automated conveyor sorting line to substantially improve throughput, sorting precision, and eliminate repetitive manual sorting.',
+      '<b>AI Computer Vision (OpenCV)</b>: Integrated camera vision processing pipeline to classify fastener geometry, thread structure, and dimensional metrics in real time.',
+      '<b>PLC & Actuator Synchronization</b>: Coupled OpenCV vision classification output with industrial PLC logic to trigger high-speed sorting diverters/pneumatic actuators.',
+      '<b>HMI Monitoring & Testing</b>: Configured responsive HMI screens for real-time piece counting, cycle efficiency, and comprehensive I/O fault diagnosis.'
+    ],
+    metrics: [
+      { label: 'Core Controller', val: 'Industrial PLC' },
+      { label: 'Computer Vision', val: 'AI OpenCV' },
+      { label: 'Operator UI', val: 'HMI Touch Screen' },
+      { label: 'Mechanics', val: 'Conveyor Sorter' }
+    ]
+  },
   'ros2-arm': {
     title: '5-DOF Articulated Robotic Arm Digital Twin & Geared Gripper',
     category: 'Robotics & Control',
